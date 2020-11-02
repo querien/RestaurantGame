@@ -1,0 +1,61 @@
+.canvas {
+  height: 400px;
+  width: 600px;
+  background-color: pink;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.pickFrom {
+  height: 300px;
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropZone,
+.orderZone {
+  width: 200px;
+  height: 100px;
+  background-color: darkblue;
+  border: 5px dotted black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+.items {
+  width: 30px;
+  height: 30px;
+  background-color: crimson;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+#item1 {
+  background-image: url(Pictures/Burger.png);
+  background-size: 100%;
+}
+
+#item2 {
+  background-image: url(Pictures/Ice-cream.png);
+  background-size: 85%;
+}
+#item3 {
+  background-image: url(Pictures/Donut2.png);
+  background-size: 100%;
+}
+#item4 {
+  background-image: url(Pictures/Untitled\ 21.png);
+  background-size: 100%;
+}
