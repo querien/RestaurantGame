@@ -1,5 +1,69 @@
+//START GAME
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
+function randomizeOrder() {
+  //randomizes new order
+  let randomAmount = Math.ceil(Math.random() * 6);
+  for (let i = 0; i < randomAmount; i++) {
+    var randomX = document.createElement("p");
+    (randomX.className = `${itemArray[Math.floor(Math.random() * 10)]}`),
+      "randomItem";
+    document.querySelector(".orderZone").appendChild(randomX);
+  }
+}
+
+function endGame() {
+  let finalScreen = document.querySelector(".gameOver");
+  finalScreen.style.opacity = 0.2;
+  let finalMessage = document.querySelector(".message");
+  finalMessage.style.display = "block";
+}
+
+function removeEndGame() {
+  let finalScreen = document.querySelector(".gameOver");
+  finalScreen.style.opacity = 1;
+  let finalMessage = document.querySelector(".message");
+  finalMessage.style.display = "none";
+}
+
+function timer() {
+  let sec = 10;
+  console.log("timer is set");
+  let timer = setInterval(function () {
+    document.querySelector(".displayTimer").innerHTML = "00:" + sec;
+    sec--;
+    if (sec < 0) {
+      clearInterval(timer);
+      endGame();
+    }
+  }, 1000);
+}
+
+function startNewRound() {
+  const orderZone = document.querySelector(".orderZone");
+  const userZone = document.querySelector(".dropZone");
+  removeEndGame();
+  timer();
+  removeAllChildNodes(orderZone);
+  removeAllChildNodes(userZone);
+  randomizeOrder();
+
+  score = 0;
+}
+
+let startButton = document.querySelector(".startGame");
+startButton.addEventListener("click", (event) => {
+  console.log("button was clicked");
+  startNewRound();
+});
+
+//PLAYING THE GAME
 let dropzone = document.querySelector(".dropZone");
-let randomizedOrder = document.querySelectorAll(".randomItem");
 let el = null;
 let dragItems = document.querySelectorAll(".draggable");
 
@@ -24,53 +88,51 @@ dropzone.addEventListener("drop", (event) => {
   event.preventDefault();
   event.target.appendChild(el);
   el.addEventListener("click", (event) => dropzone.removeChild(event.target));
-  el.classList.add("added");
   el.classList.remove("draggable");
   el = null;
 });
 
-// RANDOM ORDER GENERATOR
-let startGame = document.querySelector(".startGame");
-let itemArray = [
-  "item1",
-  "item2",
-  "item3",
-  "item4",
-  "item5",
-  "item6",
-  "item7",
-  "item8",
-  "item9",
-  "item10",
-];
+//CHECKING THE ORDER
+let enterButton = document.querySelector(".enterOrder");
 
-startGame.addEventListener("click", (event) => {
-  randomizeOrder();
-});
-
-let randomizedArr = [];
-
-function randomizeOrder() {
-  randomizedOrder.forEach((element) => {
-    let randomItem = Math.floor(Math.random() * 10);
-    randomizedArr.push(`${itemArray[randomItem]}`);
-    element.classList.remove("draggable", "randomItem");
-    element.classList.add(`${itemArray[randomItem]}`, "randomItem");
-  });
+function getClasses(domElement) {
+  return Array.from(domElement.children).map((el) => el.classList[0]);
 }
 
-//COMPARE THE ORDER WITH THE PRESENTED ITEMS
-let enterButton = document.querySelector(".enterOrder");
-let orderedItems = document.querySelectorAll(".randomItem");
+function checkOrderEntry() {
+  const orderZone = document.querySelector(".orderZone");
+  const userZone = document.querySelector(".dropZone");
+  const currentOrders = getClasses(orderZone);
+  const userOrder = getClasses(userZone);
+  //console.log(currentOrders);
+  //console.log(userOrder);
+  currentOrders.forEach((element, index) => {
+    if (element === userOrder[index]) {
+      score += 10;
+    } else {
+      console.log("wrong entry");
+      return;
+    }
+  });
+  return score;
+}
+
+function updateScore() {
+  document.querySelector(".score").innerHTML = `Score: ${score}`;
+}
+
+function nextRound() {
+  const orderZone = document.querySelector(".orderZone");
+  const userZone = document.querySelector(".dropZone");
+  removeAllChildNodes(orderZone);
+  removeAllChildNodes(userZone);
+  randomizeOrder();
+}
 
 enterButton.addEventListener("click", (event) => {
-  let enteredItems = document.querySelectorAll(".added");
-  console.log(enteredItems);
-  console.log(enteredItems.item(0).classList());
+  checkOrderEntry();
+  updateScore();
+  nextRound();
 });
 
-//TO DO
-// Find a way to compare two nodelists on the first 6 characters
-// Add a timer
-// ADd a point counter
-// Add different rounds where point counter remains the same until order is wrong;
+//ENDING THE GAME

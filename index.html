@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<header class = header >
+<p class="displayTimer">Ready?</p>
+<button class = "startGame"> START GAME</button>
+<p class="score"> Score: 0 </p>
+</header>
 
-<section class = "canvas">
+
+<h1 class = message >GAME OVER</h1>
+<div class = gameOver> 
+<section class = "canvas">    
 <div class = "pickFrom">
      <p class = "item1 draggable" draggable="true"></p>
      <p class = "item2 draggable" draggable="true"></p>
@@ -25,9 +36,7 @@
 
 <div class = "dropZone"> </div>
 
-<button class = "enterOrder"> Enter Order</button>
-<button class = "startGame"> Start Game</button>
-
+<button class = "enterOrder"> ENTER ORDER</button>
 
 <div class = "orderZone">
     <p class = "randomItem" ></p>
@@ -38,7 +47,10 @@
     <p class = "randomItem" ></p>
 </div>
 </section>
+</div>
 
+
+<script src="constants.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

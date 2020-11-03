@@ -1,11 +1,32 @@
+* {
+  font-family: "VT323", monospace;
+}
+
+.gameOver {
+  opacity: 1;
+}
+
+.message {
+  display: none;
+  margin: 0 175px;
+}
+
 .canvas {
-  height: 400px;
+  height: 300px;
   width: 600px;
   background-color: pink;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  visibility: visible;
+}
+
+header {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
 }
 
 .pickFrom {
@@ -41,6 +62,13 @@
   opacity: 0.5;
 }
 
+.randomItem {
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  margin: 10px;
+}
+
 .enterOrder,
 .startGame {
   height: 30px;
@@ -65,21 +93,20 @@
 }
 
 .item2 {
-  background-image: url(Pictures/Ice-cream.png);
-  background-size: 85%;
-  background-repeat: no-repeat;
+  background-image: url(Pictures/Cake2.png);
+  background-size: 100%;
 }
 .item3 {
   background-image: url(Pictures/Donut2.png);
   background-size: 100%;
 }
 .item4 {
-  background-image: url(Pictures/Untitled\ 21.png);
+  background-image: url(Pictures/Pizza.png);
   background-size: 100%;
 }
 
 .item5 {
-  background-image: url(Pictures/Pizza.png);
+  background-image: url(Pictures/Icecream.png);
   background-size: 100%;
 }
 
@@ -88,21 +115,26 @@
   background-size: 100%;
 }
 .item7 {
-  background-image: url(Pictures/Ice\ cream.png);
-  background-size: 50%;
+  background-image: url(Pictures/Donut.png);
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
 .item8 {
-  background-image: url(Pictures/Pizza.png);
-  background-size: 100%;
+  background-image: url(Pictures/Watermelon.png);
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .item9 {
-  background-image: url(Pictures/Pizza.png);
+  background-image: url(Pictures/Hotdog.png);
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .item10 {
   background-image: url(Pictures/Magnum.png);
   background-size: 50%;
   background-repeat: no-repeat;
+  background-position: center;
 }
