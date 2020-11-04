@@ -11,39 +11,57 @@ function randomizeOrder() {
   let randomAmount = Math.ceil(Math.random() * 6);
   for (let i = 0; i < randomAmount; i++) {
     var randomX = document.createElement("p");
-    (randomX.className = `${itemArray[Math.floor(Math.random() * 10)]}`),
+    (randomX.className = `${
+      itemArray[Math.floor(Math.random() * itemArray.length)]
+    }`),
       "randomItem";
     document.querySelector(".orderZone").appendChild(randomX);
   }
 }
 
 function endGame() {
-  let finalScreen = document.querySelector(".gameOver");
-  finalScreen.style.opacity = 0.2;
+  //let finalScreen = document.querySelector(".canvas");
+  //finalScreen.style.opacity = 0.2;
   let finalMessage = document.querySelector(".message");
   finalMessage.style.display = "block";
 }
 
+let newHighScore = 0;
+function storeHighScore() {
+  if (score > newHighScore) {
+    newHighScore = score;
+    document.querySelector(
+      ".newHighScore"
+    ).innerHTML = `NEW High Score: ${newHighScore}`;
+  } else {
+    document.querySelector(
+      ".newHighScore"
+    ).innerHTML = `High Score: ${newHighScore}`;
+  }
+}
 function removeEndGame() {
-  let finalScreen = document.querySelector(".gameOver");
+  let finalScreen = document.querySelector(".canvas");
   finalScreen.style.opacity = 1;
   let finalMessage = document.querySelector(".message");
   finalMessage.style.display = "none";
 }
 
+//TIMER FUNCTION
 function timer() {
-  let sec = 10;
-  console.log("timer is set");
+  let sec = 20;
+  //console.log("timer is set");
   let timer = setInterval(function () {
     document.querySelector(".displayTimer").innerHTML = "00:" + sec;
     sec--;
     if (sec < 0) {
       clearInterval(timer);
       endGame();
+      storeHighScore();
     }
   }, 1000);
 }
 
+//RESTART GAME
 function startNewRound() {
   const orderZone = document.querySelector(".orderZone");
   const userZone = document.querySelector(".dropZone");
@@ -52,12 +70,11 @@ function startNewRound() {
   removeAllChildNodes(orderZone);
   removeAllChildNodes(userZone);
   randomizeOrder();
-
   score = 0;
 }
 
 let startButton = document.querySelector(".startGame");
-startButton.addEventListener("click", (event) => {
+startButton.addEventListener("click", () => {
   console.log("button was clicked");
   startNewRound();
 });
@@ -110,8 +127,7 @@ function checkOrderEntry() {
     if (element === userOrder[index]) {
       score += 10;
     } else {
-      console.log("wrong entry");
-      return;
+      score -= 20;
     }
   });
   return score;
@@ -129,10 +145,22 @@ function nextRound() {
   randomizeOrder();
 }
 
+//BUTTON TO ENTER ORDER
 enterButton.addEventListener("click", (event) => {
   checkOrderEntry();
   updateScore();
   nextRound();
 });
 
-//ENDING THE GAME
+//ADD BUTTON TO RESET GAME WITHOUT STARTING THE GAME
+let resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", (event) => {
+  const orderZone = document.querySelector(".orderZone");
+  const userZone = document.querySelector(".dropZone");
+  removeEndGame();
+  removeAllChildNodes(orderZone);
+  removeAllChildNodes(userZone);
+  newHighScore = 0;
+  score = 0;
+  updateScore();
+});

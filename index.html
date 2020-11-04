@@ -14,41 +14,57 @@
 <header class = header >
 <p class="displayTimer">Ready?</p>
 <button class = "startGame"> START GAME</button>
+<button class = "reset"> RESET</button>
 <p class="score"> Score: 0 </p>
 </header>
 
 
-<h1 class = message >GAME OVER</h1>
-<div class = gameOver> 
-<section class = "canvas">    
-<div class = "pickFrom">
-     <p class = "item1 draggable" draggable="true"></p>
-     <p class = "item2 draggable" draggable="true"></p>
-     <p class = "item3 draggable" draggable="true"></p>
-     <p class = "item4 draggable" draggable="true"></p>
-     <p class = "item5 draggable" draggable="true"></p>
-     <p class = "item6 draggable" draggable="true"></p>
-     <p class = "item7 draggable" draggable="true"></p>
-     <p class = "item8 draggable" draggable="true"></p>
-     <p class = "item9 draggable" draggable="true"></p>
-     <p class = "item10 draggable" draggable="true"></p>     
+
+<section class = "canvas">  
+<div class="upper-bar">
+    <div class = "orderZone">
+        <p class = "randomItem" ></p>
+        <p class = "randomItem" ></p>
+        <p class = "randomItem" ></p>
+        <p class = "randomItem" ></p>
+        <p class = "randomItem" ></p>
+        <p class = "randomItem" ></p>
+    </div> 
 </div>
 
-<div class = "dropZone"> </div>
-
-<button class = "enterOrder"> ENTER ORDER</button>
-
-<div class = "orderZone">
-    <p class = "randomItem" ></p>
-    <p class = "randomItem" ></p>
-    <p class = "randomItem" ></p>
-    <p class = "randomItem" ></p>
-    <p class = "randomItem" ></p>
-    <p class = "randomItem" ></p>
-</div>
-</section>
+<div class="message">
+    <h1>GAME OVER</h1>
+    <p class="newHighScore"> New Highscore: 0 </p>
 </div>
 
+<div class="lower-bar">
+   
+    <div class="snacks">
+        <p class = "item1 draggable" draggable="true"></p>
+        <p class = "item2 draggable" draggable="true"></p>
+        <p class = "item3 draggable" draggable="true"></p>
+        <p class = "item4 draggable" draggable="true"></p>
+        <p class = "item5 draggable" draggable="true"></p>
+       <p class = "item6 draggable" draggable="true"></p>
+       <p class = "item7 draggable" draggable="true"></p>  
+   </div>
+  
+    <button class = "enterOrder"> ENTER ORDER</button>
+    <div class = "dropZone"> </div>
+    
+    <div class = "freezer">
+        <p class = "item8 draggable" draggable="true"></p>
+        <p class = "item9 draggable" draggable="true"></p>
+        <p class = "item10 draggable" draggable="true"></p>
+        <p class = "item11 draggable" draggable="true"></p>
+        <p class = "item12 draggable" draggable="true"></p>
+        <p class = "item13 draggable" draggable="true"></p>
+        <p class = "item14 draggable" draggable="true"></p>
+        
+    </div>
+</div>
+    
+<section>
 
 <script src="constants.js"></script>
 <script src="main.js"></script>

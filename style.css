@@ -2,61 +2,109 @@
   font-family: "VT323", monospace;
 }
 
+.message {
+  display: none;
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  background-color: pink;
+  top: 200px;
+  left: 100px;
+  opacity: 1;
+  text-align: center;
+  font-size: 2em;
+}
+
 .gameOver {
   opacity: 1;
 }
 
-.message {
-  display: none;
-  margin: 0 175px;
-}
-
 .canvas {
-  height: 300px;
-  width: 600px;
-  background-color: pink;
+  height: 400px;
+  width: 700px;
+  background-image: url(/Pictures/Background.png);
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  visibility: visible;
-}
-
-header {
-  width: 500px;
-  display: flex;
-  justify-content: space-around;
-  align-items: space-between;
-}
-
-.pickFrom {
-  height: 300px;
-  width: 100px;
-  background-color: white;
-  border: 2px solid black;
-  display: flex;
+  opacity: 1;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: flex-end;
 }
 
-.dropZone,
+.upper-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .orderZone {
-  width: 200px;
+  background-image: url(Pictures/Order\ 2.png);
   height: 100px;
-  background-color: darkblue;
-  border: 5px dotted black;
+  width: 180px;
+  margin: 70px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-/* .canvas {
-  background-image: url(Pictures/Board.png);
+.lower-bar {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.dropZone {
+  background-image: url(/Pictures/Board.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 70%; 
-}*/
+  width: 180px;
+  height: 100px;
+
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.snacks {
+  background-image: url(Pictures/Shelving2.png);
+  width: 200px;
+  height: 180px;
+  padding: 20px 5px 10px 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.freezer {
+  background-image: url(Pictures/Shelving2.png);
+  width: 200px;
+  height: 180px;
+  padding: 20px 5px 10px 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+header {
+  width: 700px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* .pickFrom {
+  height: 300px;
+  width: 108px;
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+} */
 
 .draggable.dragging {
   opacity: 0.5;
@@ -70,7 +118,8 @@ header {
 }
 
 .enterOrder,
-.startGame {
+.startGame,
+.reset {
   height: 30px;
   width: 40px;
   font-size: 10px;
@@ -82,59 +131,94 @@ header {
 [class^="item"] {
   width: 30px;
   height: 30px;
-  background-color: crimson;
-  border: 2px solid black;
+  background-color: #f2f3f4;
+  border: white 2px solid;
+  border-radius: 50%;
   margin: 10px;
 }
 
-.item1 {
-  background-image: url(Pictures/Burger.png);
-  background-size: 100%;
-}
+/* Bakery */
 
-.item2 {
+.item1 {
   background-image: url(Pictures/Cake2.png);
   background-size: 100%;
 }
-.item3 {
+.item2 {
   background-image: url(Pictures/Donut2.png);
   background-size: 100%;
 }
-.item4 {
-  background-image: url(Pictures/Pizza.png);
-  background-size: 100%;
-}
-
-.item5 {
-  background-image: url(Pictures/Icecream.png);
-  background-size: 100%;
-}
-
-.item6 {
+.item3 {
   background-image: url(Pictures/Cookie.png);
   background-size: 100%;
 }
-.item7 {
+.item4 {
   background-image: url(Pictures/Donut.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
+/* FastFood */
+
+.item5 {
+  background-image: url(Pictures/Pizza.png);
+  background-size: 100%;
+}
+.item6 {
+  background-image: url(Pictures/Burger.png);
+  background-size: 100%;
+}
+
+.item7 {
+  background-image: url(Pictures/Hotdog.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Freezer */
 .item8 {
   background-image: url(Pictures/Watermelon.png);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .item9 {
-  background-image: url(Pictures/Hotdog.png);
+  background-image: url(Pictures/Icecream.png);
+  background-size: 100%;
+}
+
+.item10 {
+  background-image: url(Pictures/Magnum.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item11 {
+  background-image: url(Pictures/Rocket.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item12 {
+  background-image: url(Pictures/Icecream2.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item13 {
+  background-image: url(Pictures/Cake.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
-.item10 {
-  background-image: url(Pictures/Magnum.png);
-  background-size: 50%;
+
+.item14 {
+  background-image: url(Pictures/Bottle.png);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
