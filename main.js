@@ -80,6 +80,7 @@ startButton.addEventListener("click", () => {
   console.log("button was clicked");
   startNewRound();
   gameMusic.play();
+  gameMusic.volume = 0.1;
 });
 
 //PLAYING THE GAME
@@ -169,6 +170,7 @@ resetButton.addEventListener("click", (event) => {
   score = 0;
   updateScore();
   clearInterval(timer);
+  gameMusic.pause();
 });
 
 //ADD BUTTON WITH GAME INSTRUCTIONS
@@ -183,3 +185,7 @@ closeInstructions.addEventListener("click", () => {
   let instructions = document.querySelector(".howTo");
   instructions.style.display = "none";
 });
+
+//localStorage.setItem("highScore", "1000000")
+// document.querySelector(".score").innerText=`Score ${localStorage.getItem("highScore")}`
+// "Score 1000000"
