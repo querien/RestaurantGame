@@ -26,6 +26,11 @@ function endGame() {
   finalMessage.style.display = "block";
 }
 
+function store() {
+  var name = document.getElementById("name");
+  localStorage.setItem(name.value, newHighScore);
+}
+
 let newHighScore = 0;
 function storeHighScore() {
   if (score > newHighScore) {
@@ -48,7 +53,7 @@ function removeEndGame() {
 
 //TIMER FUNCTION
 function timer() {
-  let sec = 60;
+  let sec = 5;
   //console.log("timer is set");
   let timer = setInterval(function () {
     document.querySelector(".displayTimer").innerHTML = "00:" + sec;
@@ -188,4 +193,4 @@ closeInstructions.addEventListener("click", () => {
 
 //localStorage.setItem("highScore", "1000000")
 // document.querySelector(".score").innerText=`Score ${localStorage.getItem("highScore")}`
-// "Score 1000000"
+// "Score 1000000")

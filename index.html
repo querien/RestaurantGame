@@ -16,8 +16,11 @@
 <button class = "startGame"> START GAME</button>
 
 <p class="score"> Score: 0 </p>
+
+<div class = "buttons">
 <button class=buttonQA> ?</button>
 <button class = "reset"> RESET</button>
+</div>
 
 </header>
 
@@ -53,6 +56,10 @@
 <div class="message">
     <h1>GAME OVER</h1>
     <p class="newHighScore"> New Highscore: 0 </p>
+    <form action="">
+        <input type="text" id="name" name="name" placeholder = "Enter name to save high score!">
+    </form>
+    <button onclick="store()" type="button">Enter</button>
 </div>
 
 <div class="lower-bar">

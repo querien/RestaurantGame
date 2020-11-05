@@ -44,6 +44,19 @@ h3 {
   font-size: 2em;
 }
 
+.message > h1 {
+  margin-bottom: 20px;
+}
+
+.message > .newHighScore {
+  margin: 0 auto;
+}
+
+.message > form > input {
+  width: 200px;
+  text-align: center;
+}
+
 .gameOver {
   opacity: 1;
 }
