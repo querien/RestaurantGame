@@ -46,6 +46,12 @@
   flex-wrap: wrap;
 }
 
+.dropZoneContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .lower-bar {
   height: 100px;
   display: flex;
@@ -55,20 +61,16 @@
 }
 
 .dropZone {
-  background-image: url(./Pictures/Board.png);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 180px;
   height: 100px;
-
-  margin: 30px 10px;
+  margin: 20px 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .snacks {
-  background-image: url(./Pictures/Shelving2.png);
+  background-image: url(./Pictures/Shelving3.png);
   width: 200px;
   height: 180px;
   padding: 20px 5px 10px 5px;
@@ -78,7 +80,7 @@
 }
 
 .freezer {
-  background-image: url(./Pictures/Shelving2.png);
+  background-image: url(./Pictures/Shelving3.png);
   width: 200px;
   height: 180px;
   padding: 20px 5px 10px 5px;
@@ -87,24 +89,16 @@
   flex-wrap: wrap;
 }
 
+.orderZone > p {
+  margin: 5px 10px;
+}
+
 header {
   width: 700px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-
-/* .pickFrom {
-  height: 300px;
-  width: 108px;
-  background-color: white;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-} */
 
 .draggable.dragging {
   opacity: 0.5;
@@ -218,6 +212,13 @@ header {
 
 .item14 {
   background-image: url(./Pictures/Bottle.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item15 {
+  background-image: url(./Pictures/Jaegermeister.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
