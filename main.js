@@ -48,7 +48,7 @@ function removeEndGame() {
 
 //TIMER FUNCTION
 function timer() {
-  let sec = 20;
+  let sec = 60;
   //console.log("timer is set");
   let timer = setInterval(function () {
     document.querySelector(".displayTimer").innerHTML = "00:" + sec;
