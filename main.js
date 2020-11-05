@@ -53,7 +53,7 @@ function removeEndGame() {
 
 //TIMER FUNCTION
 function timer() {
-  let sec = 5;
+  let sec = 60;
   //console.log("timer is set");
   let timer = setInterval(function () {
     document.querySelector(".displayTimer").innerHTML = "00:" + sec;
@@ -85,7 +85,7 @@ startButton.addEventListener("click", () => {
   console.log("button was clicked");
   startNewRound();
   gameMusic.play();
-  gameMusic.volume = 0.1;
+  gameMusic.volume = 0.2;
 });
 
 //PLAYING THE GAME
@@ -121,6 +121,7 @@ dropzone.addEventListener("drop", (event) => {
 //CHECKING THE ORDER
 let enterButton = document.querySelector(".enterOrder");
 var coins = new Audio("Coins.m4a");
+coins.volume = 0.5;
 
 function getClasses(domElement) {
   return Array.from(domElement.children).map((el) => el.classList[0]);
