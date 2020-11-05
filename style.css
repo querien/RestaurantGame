@@ -22,7 +22,7 @@
 .canvas {
   height: 400px;
   width: 700px;
-  background-image: url(/Pictures/Background.png);
+  background-image: url(./Pictures/Background.png);
   display: flex;
   opacity: 1;
   flex-direction: column;
@@ -37,7 +37,7 @@
 }
 
 .orderZone {
-  background-image: url(Pictures/Order\ 2.png);
+  background-image: url(./Pictures/Order\ 2.png);
   height: 100px;
   width: 180px;
   margin: 70px auto;
@@ -55,7 +55,7 @@
 }
 
 .dropZone {
-  background-image: url(/Pictures/Board.png);
+  background-image: url(./Pictures/Board.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 180px;
@@ -68,7 +68,7 @@
 }
 
 .snacks {
-  background-image: url(Pictures/Shelving2.png);
+  background-image: url(./Pictures/Shelving2.png);
   width: 200px;
   height: 180px;
   padding: 20px 5px 10px 5px;
@@ -78,7 +78,7 @@
 }
 
 .freezer {
-  background-image: url(Pictures/Shelving2.png);
+  background-image: url(./Pictures/Shelving2.png);
   width: 200px;
   height: 180px;
   padding: 20px 5px 10px 5px;
@@ -140,19 +140,19 @@ header {
 /* Bakery */
 
 .item1 {
-  background-image: url(Pictures/Cake2.png);
+  background-image: url(./Pictures/Cake2.png);
   background-size: 100%;
 }
 .item2 {
-  background-image: url(Pictures/Donut2.png);
+  background-image: url(./Pictures/Donut2.png);
   background-size: 100%;
 }
 .item3 {
-  background-image: url(Pictures/Cookie.png);
+  background-image: url(./Pictures/Cookie.png);
   background-size: 100%;
 }
 .item4 {
-  background-image: url(Pictures/Donut.png);
+  background-image: url(./Pictures/Donut.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -160,16 +160,16 @@ header {
 /* FastFood */
 
 .item5 {
-  background-image: url(Pictures/Pizza.png);
+  background-image: url(./Pictures/Pizza.png);
   background-size: 100%;
 }
 .item6 {
-  background-image: url(Pictures/Burger.png);
+  background-image: url(./Pictures/Burger.png);
   background-size: 100%;
 }
 
 .item7 {
-  background-image: url(Pictures/Hotdog.png);
+  background-image: url(./Pictures/Hotdog.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -177,47 +177,47 @@ header {
 
 /* Freezer */
 .item8 {
-  background-image: url(Pictures/Watermelon.png);
+  background-image: url(./Pictures/Watermelon.png);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .item9 {
-  background-image: url(Pictures/Icecream.png);
+  background-image: url(./Pictures/Icecream.png);
   background-size: 100%;
 }
 
 .item10 {
-  background-image: url(Pictures/Magnum.png);
+  background-image: url(./Pictures/Magnum.png);
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .item11 {
-  background-image: url(Pictures/Rocket.png);
+  background-image: url(./Pictures/Rocket.png);
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .item12 {
-  background-image: url(Pictures/Icecream2.png);
+  background-image: url(./Pictures/Icecream2.png);
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .item13 {
-  background-image: url(Pictures/Cake.png);
+  background-image: url(./Pictures/Cake.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .item14 {
-  background-image: url(Pictures/Bottle.png);
+  background-image: url(./Pictures/Bottle.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
