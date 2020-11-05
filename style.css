@@ -32,15 +32,23 @@
 
 .upper-bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: flex-end;
+  align-items: center;
+}
+
+.customer {
+  margin: 0;
+  height: 70px;
+  width: 60px;
+  background-image: url(./Pictures/Woman.png);
+  background-size: cover;
 }
 
 .orderZone {
   background-image: url(./Pictures/Order\ 2.png);
   height: 100px;
   width: 180px;
-  margin: 70px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -53,7 +61,7 @@
 }
 
 .lower-bar {
-  height: 100px;
+  height: 120px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,7 +71,7 @@
 .dropZone {
   width: 180px;
   height: 100px;
-  margin: 20px 10px;
+  margin: 0 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
