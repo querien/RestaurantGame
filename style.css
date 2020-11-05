@@ -2,6 +2,35 @@
   font-family: "VT323", monospace;
 }
 
+.howTo {
+  display: none;
+  position: absolute;
+  width: 500px;
+  height: 250px;
+  background-color: pink;
+  top: 200px;
+  left: 100px;
+  opacity: 1;
+  text-align: center;
+  font-size: 1em;
+}
+
+.howTo > p {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.howTo > h2,
+h3 {
+  margin: 0;
+}
+.howTo > .closeFile {
+  background-color: white;
+  margin: 5px 0 0 450px;
+  width: 40px;
+  height: 20px;
+}
+
 .message {
   display: none;
   position: absolute;
@@ -58,6 +87,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.dropZone {
+  background-color: blue;
 }
 
 .lower-bar {
@@ -121,7 +154,9 @@ header {
 
 .enterOrder,
 .startGame,
-.reset {
+.reset,
+.buttonQA,
+.closeFile {
   height: 30px;
   width: 40px;
   font-size: 10px;

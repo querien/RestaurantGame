@@ -170,3 +170,16 @@ resetButton.addEventListener("click", (event) => {
   updateScore();
   clearInterval(timer);
 });
+
+//ADD BUTTON WITH GAME INSTRUCTIONS
+let howToButton = document.querySelector(".buttonQA");
+howToButton.addEventListener("click", () => {
+  let instructions = document.querySelector(".howTo");
+  instructions.style.display = "block";
+});
+
+let closeInstructions = document.querySelector(".closeFile");
+closeInstructions.addEventListener("click", () => {
+  let instructions = document.querySelector(".howTo");
+  instructions.style.display = "none";
+});
