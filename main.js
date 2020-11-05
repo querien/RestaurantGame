@@ -32,11 +32,11 @@ function storeHighScore() {
     newHighScore = score;
     document.querySelector(
       ".newHighScore"
-    ).innerHTML = `NEW High Score: ${newHighScore}`;
+    ).innerHTML = `NEW High Score: $${newHighScore}`;
   } else {
     document.querySelector(
       ".newHighScore"
-    ).innerHTML = `High Score: ${newHighScore}`;
+    ).innerHTML = `High Score: $${newHighScore}`;
   }
 }
 function removeEndGame() {
@@ -62,6 +62,8 @@ function timer() {
 }
 
 //RESTART GAME
+var gameMusic = new Audio("bensound-buddy.mp3");
+
 function startNewRound() {
   const orderZone = document.querySelector(".orderZone");
   const userZone = document.querySelector(".dropZone");
@@ -77,6 +79,7 @@ let startButton = document.querySelector(".startGame");
 startButton.addEventListener("click", () => {
   console.log("button was clicked");
   startNewRound();
+  gameMusic.play();
 });
 
 //PLAYING THE GAME
@@ -111,6 +114,7 @@ dropzone.addEventListener("drop", (event) => {
 
 //CHECKING THE ORDER
 let enterButton = document.querySelector(".enterOrder");
+var coins = new Audio("Coins.m4a");
 
 function getClasses(domElement) {
   return Array.from(domElement.children).map((el) => el.classList[0]);
@@ -134,7 +138,7 @@ function checkOrderEntry() {
 }
 
 function updateScore() {
-  document.querySelector(".score").innerHTML = `Score: ${score}`;
+  document.querySelector(".score").innerHTML = `Score: $${score}`;
 }
 
 function nextRound() {
@@ -149,6 +153,7 @@ function nextRound() {
 enterButton.addEventListener("click", (event) => {
   checkOrderEntry();
   updateScore();
+  coins.play();
   nextRound();
 });
 
@@ -163,4 +168,5 @@ resetButton.addEventListener("click", (event) => {
   newHighScore = 0;
   score = 0;
   updateScore();
+  clearInterval(timer);
 });
