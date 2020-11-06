@@ -28,10 +28,10 @@ function endGame() {
 
 function store() {
   var name = document.getElementById("name");
-  localStorage.setItem(name.value, newHighScore);
+  localStorage.setItem(name.value, score);
+  localStorage.setItem("highScore", newHighScore);
 }
 
-let newHighScore = 0;
 function storeHighScore() {
   if (score > newHighScore) {
     newHighScore = score;
@@ -41,7 +41,9 @@ function storeHighScore() {
   } else {
     document.querySelector(
       ".newHighScore"
-    ).innerHTML = `High Score: $${newHighScore}`;
+    ).innerHTML = `High Score: $${localStorage.getItem(
+      "highScore"
+    )} <br> Your Score: $${score}`;
   }
 }
 function removeEndGame() {
@@ -53,7 +55,7 @@ function removeEndGame() {
 
 //TIMER FUNCTION
 function timer() {
-  let sec = 60;
+  let sec = 10;
   //console.log("timer is set");
   let timer = setInterval(function () {
     document.querySelector(".displayTimer").innerHTML = "00:" + sec;

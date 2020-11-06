@@ -35,7 +35,7 @@ h3 {
   display: none;
   position: absolute;
   width: 500px;
-  height: 200px;
+  height: 250px;
   background-color: pink;
   top: 200px;
   left: 100px;
@@ -88,8 +88,8 @@ h3 {
 }
 
 .orderZone {
-  background-image: url(./Pictures/Order\ 2.png);
-  height: 100px;
+  background-image: url(./Pictures/customer-order.png);
+  height: 115px;
   width: 180px;
   display: flex;
   flex-direction: row;

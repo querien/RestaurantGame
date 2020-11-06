@@ -15,3 +15,5 @@ let itemArray = [
   "item14",
   "item15",
 ];
+
+let newHighScore = 0;
